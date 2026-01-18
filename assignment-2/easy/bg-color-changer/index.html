@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BG Color Changer</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .main-container {
+      height: 100vh;
+      width: 100%;
+      background-color: white;
+    }
+
+    .color-choose-container {
+      position: fixed;
+      bottom: 50px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 14px;
+      background-color: #fefefe;
+      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.25);
+      display: flex;
+      gap: 10px;
+      border-radius: 12px;
+    }
+
+    button {
+      border: none;
+      height: 40px;
+      width: 80px;
+      border-radius: 16px;
+      font-size: 16px;
+      cursor: pointer;
+      color: white;
+    }
+
+    .red { background-color: red; }
+    .yellow { background-color: yellow; color: black; }
+    .black { background-color: black; }
+    .purple { background-color: purple; }
+    .green { background-color: green; }
+    .blue { background-color: blue; }
+    .default { background-color: gray; }
+  </style>
+</head>
+
+<body>
+  <div class="main-container" id="main"></div>
+
+  <div class="color-choose-container">
+    <button class="red" onclick="changeColor('red')">Red</button>
+    <button class="yellow" onclick="changeColor('yellow')">Yellow</button>
+    <button class="black" onclick="changeColor('black')">Black</button>
+    <button class="purple" onclick="changeColor('purple')">Purple</button>
+    <button class="green" onclick="changeColor('green')">Green</button>
+    <button class="blue" onclick="changeColor('blue')">Blue</button>
+    <button class="default" onclick="changeColor('white')">Default</button>
+  </div>
+
+  <script>
+    function changeColor(color) {
+      document.getElementById("main").style.backgroundColor = color;
+    }
+  </script>
+</body>
+</html>
